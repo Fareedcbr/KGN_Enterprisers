@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGN Enterprisers | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Geist:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hanken+Grotesk:wght@100..900&family=Sora:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(37, 40, 44, 0.6);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ev-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Hanken+Grotesk', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#9cf0ff",
+                        "error": "#ffb4ab",
+                        "primary": "#c3f5ff",
+                        "secondary-fixed-dim": "#2ae500",
+                        "inverse-surface": "#d4e4fa",
+                        "surface-bright": "#2c3a4c",
+                        "surface-container-highest": "#273647",
+                        "on-secondary-fixed": "#022100",
+                        "surface-container-high": "#1c2b3c",
+                        "on-surface": "#d4e4fa",
+                        "background": "#051424",
+                        "inverse-on-surface": "#233143",
+                        "surface-container-lowest": "#010f1f",
+                        "secondary-container": "#2ff801",
+                        "tertiary-container": "#d0d0d3",
+                        "on-tertiary-fixed-variant": "#454749",
+                        "surface-container": "#122131",
+                        "inverse-primary": "#006875",
+                        "on-secondary": "#053900",
+                        "on-surface-variant": "#bac9cc",
+                        "on-secondary-container": "#0f6d00",
+                        "on-background": "#d4e4fa",
+                        "on-tertiary": "#2f3133",
+                        "surface": "#051424",
+                        "on-tertiary-fixed": "#1a1c1e",
+                        "on-primary-container": "#00626e",
+                        "outline": "#849396",
+                        "secondary": "#d7ffc5",
+                        "tertiary-fixed-dim": "#c6c6c9",
+                        "surface-variant": "#273647",
+                        "secondary-fixed": "#79ff5b",
+                        "surface-container-low": "#0d1c2d",
+                        "on-primary-fixed": "#001f24",
+                        "primary-container": "#00e5ff",
+                        "on-tertiary-container": "#57595b",
+                        "on-secondary-fixed-variant": "#095300",
+                        "on-primary": "#00363d",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-tint": "#00daf3",
+                        "tertiary": "#ececef",
+                        "outline-variant": "#3b494c",
+                        "on-primary-fixed-variant": "#004f58",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e2e2e5",
+                        "primary-fixed-dim": "#00daf3",
+                        "surface-dim": "#051424"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "max-width": "1440px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Sora"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col bg-surface-container-low border-r border-outline-variant w-64 z-50 transition-all duration-300">
+<div class="p-6 flex flex-col gap-2">
+<h1 class="font-display-lg text-[24px] font-bold text-primary-container leading-tight">KGN Enterprisers</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Showroom Management</p>
+</div>
+<nav class="flex-1 px-4 mt-6 space-y-2">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-container font-bold border-r-4 border-primary-container bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined">electric_bike</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-md text-body-md">Sales Records</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full bg-primary-container text-on-primary-container py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 ev-glow transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined">add</span>
+<span>Add New Entry</span>
+</button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-16 px-margin-desktop sticky top-0 z-40 ml-64 bg-surface/60 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-primary-container rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-lg pl-10 pr-4 py-2 text-on-surface placeholder:text-on-surface-variant focus:ring-0" placeholder="Search inventory, sales, or customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-6">
+<button class="text-on-surface-variant hover:text-primary-fixed-dim transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-fixed-dim transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a modern enterprise manager in a well-lit corporate office. The individual is wearing a sharp, dark business suit and looking directly at the camera with a confident, welcoming expression. The background features high-tech screens showing electric vehicle schematics in a blurred, blue-toned office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1mAeZPh0z4ijNoXzy_6JGDzE0aeme42AowAmNXY1Q1Mi2GLAeKcAqnUIk9mYHhAgE1zYS3_rcq6MF7iJ070mQiBJ02YceHsriu_4-98_kFVB6-XVn3IjXvnFHyDlr2PhpO1J-gPUOpI70lM1DmrunNQp5xtsAF1jIocngR2NyN6KU_XC7KrL6iCuXo0No9Y6xx97dyfQ464XRJjYLSD3FCFyU1W6bmdHJgy9Htz2gFZvQ9fj9fMIN7dIuQV0cpp2japNIsV1L8lg"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-margin-desktop space-y-gutter relative">
+<!-- Dashboard Header -->
+<div class="flex flex-col gap-2">
+<h2 class="font-display-lg text-[32px] font-bold text-on-surface">Showroom Performance</h2>
+<p class="text-on-surface-variant font-body-md">Real-time overview of your electric vehicle enterprise.</p>
+</div>
+<!-- Metrics Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Total Sales -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant group hover:border-primary-container transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined">trending_up</span>
+</span>
+<span class="text-secondary-fixed text-xs font-bold">+12.5%</span>
+</div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Total Sales</p>
+<h3 class="font-display-lg text-[28px] font-bold text-on-surface">1,284</h3>
+</div>
+<!-- Current Inventory -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant group hover:border-primary-container transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-secondary-container/10 rounded-lg text-secondary-fixed">
+<span class="material-symbols-outlined">electric_bike</span>
+</span>
+<div class="flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></div>
+<span class="text-on-surface-variant text-xs">Live</span>
+</div>
+</div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Inventory Count</p>
+<h3 class="font-display-lg text-[28px] font-bold text-on-surface">42</h3>
+</div>
+<!-- Monthly Revenue -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant group hover:border-primary-container transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined">payments</span>
+</span>
+<span class="text-secondary-fixed text-xs font-bold">↑ High</span>
+</div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Monthly Revenue</p>
+<h3 class="font-display-lg text-[28px] font-bold text-on-surface">₹42.8L</h3>
+</div>
+<!-- Pending Purchases -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant group hover:border-primary-container transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="p-2 bg-error-container/10 rounded-lg text-error">
+<span class="material-symbols-outlined">pending_actions</span>
+</span>
+</div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Pending Purchases</p>
+<h3 class="font-display-lg text-[28px] font-bold text-on-surface">08</h3>
+</div>
+</div>
+<!-- Main Dashboard Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Revenue Trend Chart Placeholder -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl p-6 border border-outline-variant relative overflow-hidden h-[400px]">
+<div class="flex justify-between items-center mb-8 relative z-10">
+<h3 class="font-headline-md text-on-surface">Market Growth</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-high rounded text-xs font-bold text-primary-container">Monthly</button>
+<button class="px-3 py-1 text-xs font-bold text-on-surface-variant">Weekly</button>
+</div>
+</div>
+<!-- Chart Visual (Abstracted for UI) -->
+<div class="absolute bottom-0 left-0 w-full h-[70%] flex items-end gap-2 px-6">
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 40%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 55%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 45%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 70%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 90%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 65%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 80%"></div>
+<div class="w-full bg-primary-container/20 hover:bg-primary-container transition-all rounded-t-lg" style="height: 95%"></div>
+</div>
+<!-- Atmospheric background -->
+<div class="absolute inset-0 pointer-events-none opacity-10 bg-gradient-to-t from-primary-container to-transparent"></div>
+</div>
+<!-- Recent Activity List -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant h-[400px] flex flex-col">
+<h3 class="font-headline-md text-on-surface mb-6">Recent Activity</h3>
+<div class="space-y-6 overflow-y-auto flex-1 pr-2">
+<!-- Activity Item -->
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-4">
+<p class="font-body-md text-on-surface leading-tight mb-1">New Sale: <span class="font-bold">E-Cruiser Pro</span></p>
+<div class="flex justify-between items-center">
+<p class="text-xs text-on-surface-variant">To: Arvind K.</p>
+<p class="text-[10px] text-outline font-label-sm">2m ago</p>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-4">
+<p class="font-body-md text-on-surface leading-tight mb-1">Inventory Restock</p>
+<div class="flex justify-between items-center">
+<p class="text-xs text-on-surface-variant">05 units of "Bolt S1"</p>
+<p class="text-[10px] text-outline font-label-sm">1h ago</p>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-4">
+<p class="font-body-md text-on-surface leading-tight mb-1">New Customer Registered</p>
+<div class="flex justify-between items-center">
+<p class="text-xs text-on-surface-variant">Sneha Reddy</p>
+<p class="text-[10px] text-outline font-label-sm">3h ago</p>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center text-error flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">error_outline</span>
+</div>
+<div class="flex-1 pb-2">
+<p class="font-body-md text-on-surface leading-tight mb-1">Payment Failed</p>
+<div class="flex justify-between items-center">
+<p class="text-xs text-on-surface-variant">Order #9822 - ₹1,20,000</p>
+<p class="text-[10px] text-outline font-label-sm">Yesterday</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inventory Showcase Grid -->
+<div class="pt-8">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-on-surface">Flagship Models</h3>
+<button class="text-primary-container font-label-sm hover:underline">View Full Inventory</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Bike Card 1 -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant group">
+<div class="h-48 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A high-performance sleek black electric bike with glowing blue LED accents and thick tires, showcased in a minimalist concrete showroom with studio lighting. The aesthetic is futuristic and high-tech, emphasizing speed and eco-friendly power. The background is softly blurred to make the EV pop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArPdhmcEX4kCwXBZiOp2r8oauz2n2jq2d-nSMSqMzHu3A9psy2ku5H0eO89uNfXYrXwGiKCNSgxj3VWNVDv2686npbiy-l5tJtq1KCQd4Y13KVuoaMPDed4LNCCInxPGDGd0cYnhV82Oi5_XjLLcg4IhWoZ0Q_YSqbgvgZiB_ncUpCrow3FAd-6SWzK2ScHsDMfyEHQCIpid0wJXknu2zkmL-ppCybtE7CfOqzvZns-gI2Xwen8jLREgK0DxXbBeUElIEZiA4-wbk')"></div>
+<div class="absolute top-4 left-4 px-3 py-1 bg-secondary-container text-on-secondary-container font-label-sm rounded-full text-[10px] uppercase">In Stock</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-[18px] text-on-surface mb-2">E-Cruiser Pro X</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-bold">₹1,85,000</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">battery_charging_full</span>
+<span class="text-xs text-on-surface-variant">120km Range</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bike Card 2 -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant group">
+<div class="h-48 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A modern metallic white electric scooter featuring minimalist aerodynamic design and a large digital dashboard. It is parked on a clean reflective floor against a dark background with blue ambient lighting. The visual style is crisp and corporate, highlighting technological sophistication and urban mobility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiLKYSsmf-oPf5q6YcSx-_aftmRKf7RILWeDAzX5LUVvtVfPqqo9wgcxVPxAGj8VY6vRB7NbaFMS_tzaKzg1VduCE9QKWyiKfnXsmoDdXnN3Jmg8GrNnyYdqWB88PRWKCzPlNzy461MGAFrw_z9hthVMq4YZd-Ji1vLDCNGtCqpoa6gft6bmxvl-jycQkeOpY6GH-NVxbIRWOfwMfbMS9YGKVp9OiIduaG78Tg98tg9j7BIlMLDKIApG3Awrdpu3agf4ebHTyvU8M')"></div>
+<div class="absolute top-4 left-4 px-3 py-1 bg-surface-container text-on-surface-variant font-label-sm rounded-full text-[10px] uppercase border border-outline-variant">Low Stock</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-[18px] text-on-surface mb-2">Urban Glide V2</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-bold">₹98,000</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">battery_full</span>
+<span class="text-xs text-on-surface-variant">85km Range</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bike Card 3 -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant group">
+<div class="h-48 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A rugged, off-road electric mountain bike in military green matte finish with exposed wiring and high-torque motor visible. It sits in a high-tech workshop setting with industrial lighting and grid-patterned walls. The mood is adventurous and powerful, conveying heavy-duty performance and reliability." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCk2UCaA3oeKT8Tm2jm7gjqMkvWqrfjSY6803gI_ehI0okhTYQpd2sneMyaZ-ZnIPfk_Skt9nBB_tb1eZyLoqYv0-wlMrQxmeiOsSJ4FACaH1UIx-VgXWUsvOZEjlr34QCJTWWDYLjGeX8XVwKUxdu1Lyss9TgODwS0QA5GQKshPJ9hTv0_6f4tCKOHiyiT2tEoH_j1gMArJYPlyRvGIiIdbmGspyJAEgmuVILBYaBst1QxT8EbVdosggurc7vFNpMavnXyIv5LQI')"></div>
+<div class="absolute top-4 left-4 px-3 py-1 bg-secondary-container text-on-secondary-container font-label-sm rounded-full text-[10px] uppercase">In Stock</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-[18px] text-on-surface mb-2">Mountain Bolt S1</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-bold">₹2,10,000</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">bolt</span>
+<span class="text-xs text-on-surface-variant">150km Range</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Atmospheric Glow -->
+<div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary-container/10 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+<div class="fixed bottom-[-10%] left-[20%] w-[400px] h-[400px] bg-secondary-container/5 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+</main>
+<!-- FAB for Quick Entry (Contextual) -->
+<button class="fixed bottom-10 right-10 w-14 h-14 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-2xl ev-glow z-50 transition-transform active:scale-90 md:hidden">
+<span class="material-symbols-outlined">add</span>
+</button>
+<script>
+        // Simple Interaction: Search focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchContainer = searchInput.parentElement;
+        
+        searchInput.addEventListener('focus', () => {
+            searchContainer.classList.add('bg-surface-container');
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            searchContainer.classList.remove('bg-surface-container');
+        });
+
+        // Simulating some dynamic growth animation for chart
+        document.querySelectorAll('.rounded-t-lg').forEach((bar, index) => {
+            const finalHeight = bar.style.height;
+            bar.style.height = '0%';
+            setTimeout(() => {
+                bar.style.transition = `height 1s cubic-bezier(0.17, 0.67, 0.83, 0.67) ${index * 0.1}s`;
+                bar.style.height = finalHeight;
+            }, 500);
+        });
+    </script>
+</body></html>
