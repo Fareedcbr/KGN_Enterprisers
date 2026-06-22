@@ -456,7 +456,7 @@
         <header class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-50">
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-primary-container text-2xl animate-pulse">electric_bike</span>
-                <h1 class="font-display-lg text-lg font-bold text-on-surface">KGN Kinetic Showroom</h1>
+                <h1 class="font-display-lg text-lg font-bold text-on-surface">KGN Electric Showroom</h1>
             </div>
             <button id="public-back-to-admin-btn" onclick="switchView('dashboard')" class="bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-xs text-on-surface py-2 px-4 rounded-lg font-bold transition-all flex items-center gap-2 border border-outline-variant hidden">
                 <span class="material-symbols-outlined text-sm">admin_panel_settings</span>
@@ -550,6 +550,10 @@
                             <label class="block font-label-sm text-xs text-outline uppercase tracking-wider mb-2">Range Description</label>
                             <input required id="v-range" type="text" class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-2.5 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary-container outline-none" placeholder="e.g. 120km Range"/>
                         </div>
+                        <div>
+                            <label class="block font-label-sm text-xs text-outline uppercase tracking-wider mb-2">Top Speed Description</label>
+                            <input required id="v-speed" type="text" class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-2.5 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary-container outline-none" placeholder="e.g. 80km/h Top Speed"/>
+                        </div>
                     </div>
                     
                     <!-- Preset Image Selector -->
@@ -557,19 +561,19 @@
                         <label class="block font-label-sm text-xs text-outline uppercase tracking-wider mb-2">Select Vehicle Design Preset</label>
                         <div class="grid grid-cols-4 gap-2 mb-3">
                             <button type="button" onclick="selectPresetImage(0)" id="preset-btn-0" class="h-16 rounded-lg overflow-hidden border-2 border-transparent transition-all hover:border-primary-container relative">
-                                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArPdhmcEX4kCwXBZiOp2r8oauz2n2jq2d-nSMSqMzHu3A9psy2ku5H0eO89uNfXYrXwGiKCNSgxj3VWNVDv2686npbiy-l5tJtq1KCQd4Y13KVuoaMPDed4LNCCInxPGDGd0cYnhV82Oi5_XjLLcg4IhWoZ0Q_YSqbgvgZiB_ncUpCrow3FAd-6SWzK2ScHsDMfyEHQCIpid0wJXknu2zkmL-ppCybtE7CfOqzvZns-gI2Xwen8jLREgK0DxXbBeUElIEZiA4-wbk" alt="Preset 1"/>
+                                <img class="w-full h-full object-contain" src="/assets/CRUISER%20NK-jBkAET3l.jpg" alt="Preset 1"/>
                                 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"><span class="text-[10px] font-bold text-on-surface">Black</span></div>
                             </button>
                             <button type="button" onclick="selectPresetImage(1)" id="preset-btn-1" class="h-16 rounded-lg overflow-hidden border-2 border-transparent transition-all hover:border-primary-container relative">
-                                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiLKYSsmf-oPf5q6YcSx-_aftmRKf7RILWeDAzX5LUVvtVfPqqo9wgcxVPxAGj8VY6vRB7NbaFMS_tzaKzg1VduCE9QKWyiKfnXsmoDdXnN3Jmg8GrNnyYdqWB88PRWKCzPlNzy461MGAFrw_z9hthVMq4YZd-Ji1vLDCNGtCqpoa6gft6bmxvl-jycQkeOpY6GH-NVxbIRWOfwMfbMS9YGKVp9OiIduaG78Tg98tg9j7BIlMLDKIApG3Awrdpu3agf4ebHTyvU8M" alt="Preset 2"/>
+                                <img class="w-full h-full object-contain" src="/assets/GTR%20NK-yBVY-jig.jpg" alt="Preset 2"/>
                                 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"><span class="text-[10px] font-bold text-on-surface">White</span></div>
                             </button>
                             <button type="button" onclick="selectPresetImage(2)" id="preset-btn-2" class="h-16 rounded-lg overflow-hidden border-2 border-transparent transition-all hover:border-primary-container relative">
-                                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCk2UCaA3oeKT8Tm2jm7gjqMkvWqrfjSY6803gI_ehI0okhTYQpd2sneMyaZ-ZnIPfk_Skt9nBB_tb1eZyLoqYv0-wlMrQxmeiOsSJ4FACaH1UIx-VgXWUsvOZEjlr34QCJTWWDYLjGeX8XVwKUxdu1Lyss9TgODwS0QA5GQKshPJ9hTv0_6f4tCKOHiyiT2tEoH_j1gMArJYPlyRvGIiIdbmGspyJAEgmuVILBYaBst1QxT8EbVdosggurc7vFNpMavnXyIv5LQI" alt="Preset 3"/>
+                                <img class="w-full h-full object-contain" src="/assets/Ninja%20NK-DdnxwNrF.jpg" alt="Preset 3"/>
                                 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"><span class="text-[10px] font-bold text-on-surface">Green</span></div>
                             </button>
                             <button type="button" onclick="selectPresetImage(3)" id="preset-btn-3" class="h-16 rounded-lg overflow-hidden border-2 border-transparent transition-all hover:border-primary-container relative">
-                                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=600" alt="Preset 4"/>
+                                <img class="w-full h-full object-contain" src="/assets/Ninja%20Plus%20NK-DLTQ9sgX.jpg" alt="Preset 4"/>
                                 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"><span class="text-[10px] font-bold text-on-surface">Blue</span></div>
                             </button>
                         </div>
@@ -866,11 +870,11 @@
 
         // Seed Presets for new vehicles
         const presets = [
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuArPdhmcEX4kCwXBZiOp2r8oauz2n2jq2d-nSMSqMzHu3A9psy2ku5H0eO89uNfXYrXwGiKCNSgxj3VWNVDv2686npbiy-l5tJtq1KCQd4Y13KVuoaMPDed4LNCCInxPGDGd0cYnhV82Oi5_XjLLcg4IhWoZ0Q_YSqbgvgZiB_ncUpCrow3FAd-6SWzK2ScHsDMfyEHQCIpid0wJXknu2zkmL-ppCybtE7CfOqzvZns-gI2Xwen8jLREgK0DxXbBeUElIEZiA4-wbk',
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuBiLKYSsmf-oPf5q6YcSx-_aftmRKf7RILWeDAzX5LUVvtVfPqqo9wgcxVPxAGj8VY6vRB7NbaFMS_tzaKzg1VduCE9QKWyiKfnXsmoDdXnN3Jmg8GrNnyYdqWB88PRWKCzPlNzy461MGAFrw_z9hthVMq4YZd-Ji1vLDCNGtCqpoa6gft6bmxvl-jycQkeOpY6GH-NVxbIRWOfwMfbMS9YGKVp9OiIduaG78Tg98tg9j7BIlMLDKIApG3Awrdpu3agf4ebHTyvU8M',
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuBCk2UCaA3oeKT8Tm2jm7gjqMkvWqrfjSY6803gI_ehI0okhTYQpd2sneMyaZ-ZnIPfk_Skt9nBB_tb1eZyLoqYv0-wlMrQxmeiOsSJ4FACaH1UIx-VgXWUsvOZEjlr34QCJTWWDYLjGeX8XVwKUxdu1Lyss9TgODwS0QA5GQKshPJ9hTv0_6f4tCKOHiyiT2tEoH_j1gMArJYPlyRvGIiIdbmGspyJAEgmuVILBYaBst1QxT8EbVdosggurc7vFNpMavnXyIv5LQI',
-            'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=600'
-        ];
+            '/CRUISER NK.jpg',
+            '/GTR NK.jpg',
+            '/Ninja NK.jpg',
+            '/Ninja Plus NK.jpg'
+          ];
 
         // Seed Data
         const state = {
@@ -887,7 +891,7 @@
                 },
                 {
                     id: 'V-102',
-                    name: 'Urban Glide V2',
+                    name: 'GTR V2',
                     price: 98000,
                     range: '85km Range',
                     status: 'low stock',
@@ -897,19 +901,29 @@
                 },
                 {
                     id: 'V-103',
-                    name: 'Mountain Bolt S1',
+                    name: 'Ninja',
                     price: 210000,
                     range: '150km Range',
                     status: 'in stock',
                     image: presets[2],
                     flagship: true,
                     batteryIcon: 'bolt'
+                },
+                {
+                    id: 'V-104',
+                    name: 'Ninja Plus',
+                    price: 230000,
+                    range: '160km Range',
+                    status: 'in stock',
+                    image: presets[3],
+                    flagship: true,
+                    batteryIcon: 'bolt'
                 }
             ],
             sales: [
                 { id: 'S-9825', vehicleId: 'V-101', vehicleName: 'E-Cruiser Pro X', customerName: 'Arvind K.', amount: 185000, date: '2m ago', timestamp: Date.now() - 120000, status: 'success' },
-                { id: 'S-9824', vehicleId: 'V-102', vehicleName: 'Urban Glide V2', customerName: 'Sneha Reddy', amount: 98000, date: '3h ago', timestamp: Date.now() - 10800000, status: 'success' },
-                { id: 'S-9823', vehicleId: 'V-103', vehicleName: 'Mountain Bolt S1', customerName: 'Rajesh Kumar', amount: 210000, date: '1d ago', timestamp: Date.now() - 86400000, status: 'success' },
+                { id: 'S-9824', vehicleId: 'V-102', vehicleName: 'GTR V2', customerName: 'Sneha Reddy', amount: 98000, date: '3h ago', timestamp: Date.now() - 10800000, status: 'success' },
+                { id: 'S-9823', vehicleId: 'V-103', vehicleName: 'Ninja', customerName: 'Rajesh Kumar', amount: 210000, date: '1d ago', timestamp: Date.now() - 86400000, status: 'success' },
                 { id: 'S-9822', vehicleId: 'V-101', vehicleName: 'E-Cruiser Pro X', customerName: 'Sunil Verma', amount: 120000, date: 'Yesterday', timestamp: Date.now() - 120000000, status: 'failed' }
             ],
             customers: [
@@ -920,17 +934,17 @@
             ],
             visitors: [
                 { id: 'VIST-701', name: 'Kabir Dev', email: 'kabir.dev@outlook.com', phone: '+91 91234 56789', preferredVehicle: 'E-Cruiser Pro X', status: 'Scheduled', registered: '4h ago', timestamp: Date.now() - 14400000 },
-                { id: 'VIST-702', name: 'Ayesha Khan', email: 'ayesha.k@gmail.com', phone: '+91 93456 78901', preferredVehicle: 'Urban Glide V2', status: 'New Lead', registered: '1d ago', timestamp: Date.now() - 86400000 }
+                { id: 'VIST-702', name: 'Ayesha Khan', email: 'ayesha.k@gmail.com', phone: '+91 93456 78901', preferredVehicle: 'GTR V2', status: 'New Lead', registered: '1d ago', timestamp: Date.now() - 86400000 }
             ],
             activities: [
                 { type: 'sale', title: 'New Sale: E-Cruiser Pro X', description: 'To: Arvind K.', date: '2m ago', icon: 'check_circle', iconBg: 'bg-secondary-container/20', iconColor: 'text-secondary-fixed' },
-                { type: 'restock', title: 'Inventory Restock', description: '05 units of "Mountain Bolt S1"', date: '1h ago', icon: 'inventory_2', iconBg: 'bg-primary-container/20', iconColor: 'text-primary-container' },
+                { type: 'restock', title: 'Inventory Restock', description: '05 units of "Ninja"', date: '1h ago', icon: 'inventory_2', iconBg: 'bg-primary-container/20', iconColor: 'text-primary-container' },
                 { type: 'customer', title: 'New Customer Registered', description: 'Sneha Reddy', date: '3h ago', icon: 'person_add', iconBg: 'bg-tertiary-container/20', iconColor: 'text-on-surface-variant' },
                 { type: 'failed_payment', title: 'Payment Failed', description: 'Order #9822 - ₹1,20,000', date: 'Yesterday', icon: 'error_outline', iconBg: 'bg-error-container/20', iconColor: 'text-error' }
             ]
         };
 
-        const defaultBikeImage = 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=600';
+        const defaultBikeImage = '/CRUISER NK.jpg';
 
         const chartData = {
             monthly: [
@@ -1207,7 +1221,7 @@
                 return `
                     <div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant group hover:border-primary-container/60 transition-all">
                         <div class="h-48 relative overflow-hidden bg-surface-container-low">
-                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${bike.image || defaultBikeImage}" alt="${bike.name}"/>
+                            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="${bike.image || defaultBikeImage}" alt="${bike.name}"/>
                             <div class="absolute top-4 left-4 px-3 py-1 font-label-sm rounded-full text-[10px] uppercase font-bold tracking-wider ${badgeClass}">
                                 ${bike.status}
                             </div>
@@ -1257,7 +1271,7 @@
                     <div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant group hover:border-primary-container transition-all flex flex-col justify-between h-full">
                         <div>
                             <div class="h-48 relative overflow-hidden bg-surface-container-low">
-                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${bike.image || defaultBikeImage}" alt="${bike.name}"/>
+                                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="${bike.image || defaultBikeImage}" alt="${bike.name}"/>
                                 <div class="absolute top-4 left-4 px-3 py-1 font-label-sm rounded-full text-[10px] uppercase font-bold tracking-wider ${badgeClass}">
                                     ${bike.status}
                                 </div>
@@ -1568,7 +1582,7 @@
                     <div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant group hover:border-primary-container transition-all flex flex-col justify-between h-full">
                         <div>
                             <div class="h-56 relative overflow-hidden bg-surface-container-low">
-                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${bike.image || defaultBikeImage}" alt="${bike.name}"/>
+                                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="${bike.image || defaultBikeImage}" alt="${bike.name}"/>
                                 ${availabilityBadge}
                             </div>
                             <div class="p-6 space-y-4">
@@ -1935,7 +1949,8 @@
                 bike.range = range;
                 bike.status = status;
                 bike.image = image;
-
+                bike.batteryIcon = 'bolt'; // Assuming battery icon remains the same for simplicity
+                bike.keyFeatures = bike.keyFeatures || []; // Preserve existing key features if any
                 renderAll();
                 closeEditVehicleModal();
                 showToast(`Vehicle ${name} updated successfully.`, 'success');
